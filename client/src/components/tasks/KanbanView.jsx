@@ -92,7 +92,7 @@ export default function KanbanView({ onTaskClick, onCreateTask }) {
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <div className="flex gap-4 overflow-x-auto pb-4 h-[calc(100vh-235px)] scrollbar-thin">
+      <div className="flex gap-5 sm:gap-6 overflow-x-auto pb-6 h-[calc(100vh-235px)] scrollbar-thin">
         {STATUSES.map((status) => {
           const column = byStatus[status] || { tasks: [], totalCount: 0 };
           const config = COLUMN_CONFIG[status] || COLUMN_CONFIG['Backlog'];

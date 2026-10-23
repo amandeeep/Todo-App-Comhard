@@ -122,7 +122,7 @@ export default function TasksPage() {
   };
 
   return (
-    <div className="space-y-5 max-w-7xl pb-12">
+    <div className="space-y-6 sm:space-y-7 max-w-7xl pb-16">
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>

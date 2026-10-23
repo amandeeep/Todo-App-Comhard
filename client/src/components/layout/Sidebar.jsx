@@ -12,7 +12,6 @@ import {
   ChevronRight,
   LogOut,
   Plus,
-  X,
 } from 'lucide-react';
 import { logout } from '../../features/auth/authSlice';
 

@@ -104,11 +104,11 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="space-y-6 max-w-7xl">
+    <div className="space-y-7 sm:space-y-8 max-w-7xl">
       {/* Welcome Hero Banner */}
       <div className="relative overflow-hidden rounded-2xl border border-surface-200/80 dark:border-surface-800 bg-white dark:bg-surface-900/80 p-6 sm:p-8 shadow-xs">
         <div className="absolute top-0 right-0 -mt-8 -mr-8 h-64 w-64 rounded-full bg-primary-500/10 dark:bg-primary-500/15 blur-3xl pointer-events-none" />
-        <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">
@@ -141,7 +141,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Primary KPI Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         <StatCard
           icon={ListTodo}
           label="Total Tasks"
@@ -182,7 +182,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Middle Section: Status Breakdown & SLA Center */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7">
         {/* Status Breakdown Card */}
         <div className="card">
           <div className="flex items-center justify-between mb-5">

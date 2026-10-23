@@ -129,7 +129,8 @@ body {
 /* Form Inputs */
 .input {
   width: 100%;
-  padding: 0.55rem 0.875rem;
+  padding-block: 0.625rem;
+  padding-inline: 0.875rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   border: 1px solid var(--color-surface-200);
@@ -164,6 +165,56 @@ body {
 
 .input-error:focus {
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+}
+
+/* Icon-aware padding: guarantees placeholder & input text never collide with icons */
+.input.has-icon-left,
+.input.pl-9,
+.input.\!pl-9,
+.input.pl-9\.5,
+.input.\!pl-9\.5 {
+  padding-left: 2.375rem !important;
+}
+
+.input.pl-10,
+.input.\!pl-10,
+.input.pl-10\.5,
+.input.\!pl-10\.5,
+.input.pl-11,
+.input.\!pl-11 {
+  padding-left: 2.75rem !important;
+}
+
+.input.pl-12,
+.input.\!pl-12 {
+  padding-left: 3.125rem !important;
+}
+
+.input.has-icon-right,
+.input.pr-10,
+.input.\!pr-10,
+.input.pr-11,
+.input.\!pr-11 {
+  padding-right: 2.75rem !important;
+}
+
+.input.pr-16,
+.input.\!pr-16 {
+  padding-right: 4.25rem !important;
+}
+
+/* Placeholder text alignment and styling */
+.input::placeholder,
+textarea.input::placeholder {
+  color: var(--color-surface-400);
+  opacity: 1;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.dark .input::placeholder,
+.dark textarea.input::placeholder {
+  color: var(--color-surface-500);
 }
 
 .select {

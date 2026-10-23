@@ -48,7 +48,7 @@ export default function SectionView({ onTaskClick, onEditTask, onCreateTask }) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5 sm:space-y-6">
       {STATUSES.map((status) => {
         const sectionTasks = groupedTasks[status] || [];
         const isCollapsed = collapsedSections[status];

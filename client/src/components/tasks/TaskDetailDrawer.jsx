@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { X, Edit2, Trash2, Clock, Calendar, Target, Tag, History, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { X, Edit2, Trash2, Clock, Calendar, Target, Tag, History } from 'lucide-react';
 import { fetchTaskById, clearCurrentTask, updateTaskStatus } from '../../features/tasks/tasksSlice';
 import { StatusBadge, PriorityBadge, SlaBadge } from '../common';
 import { formatDateTime, formatDuration, formatTimeAgo, getSlaTimeRemaining, STATUSES } from '../../utils/helpers';

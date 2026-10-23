@@ -199,13 +199,13 @@ export default function FilterToolbar() {
                     Filter by Tag
                   </label>
                   <div className="relative">
-                    <Tag className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-surface-400" />
+                    <Tag className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-surface-400 pointer-events-none z-10" />
                     <input
                       type="text"
                       value={filters.tags || ''}
                       onChange={(e) => handleFilterChange('tags', e.target.value)}
                       placeholder="e.g. frontend, backend, bug..."
-                      className="input pl-9 text-xs py-1.5"
+                      className="input !pl-9.5 text-xs py-2"
                     />
                   </div>
                 </div>

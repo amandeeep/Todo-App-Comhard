@@ -155,7 +155,7 @@ export default function SettingsPage() {
           </h3>
         </div>
 
-        <form onSubmit={handlePasswordChange} className="space-y-4 max-w-md">
+        <form onSubmit={handlePasswordChange} className="space-y-4.5 max-w-md">
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-surface-700 dark:text-surface-300 mb-1.5">
               Current Password
@@ -165,14 +165,14 @@ export default function SettingsPage() {
                 type={showCurrent ? 'text' : 'password'}
                 value={passwordForm.currentPassword}
                 onChange={(e) => setPasswordForm({ ...passwordForm, currentPassword: e.target.value })}
-                className="input pr-10 text-sm"
-                placeholder="••••••••"
+                className="input !pr-11 text-sm"
+                placeholder="Enter current password"
                 required
               />
               <button
                 type="button"
                 onClick={() => setShowCurrent(!showCurrent)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-surface-400 hover:text-surface-600 dark:hover:text-surface-200"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 text-surface-400 hover:text-surface-600 dark:hover:text-surface-200 transition-colors cursor-pointer"
               >
                 {showCurrent ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
@@ -188,14 +188,14 @@ export default function SettingsPage() {
                 type={showNew ? 'text' : 'password'}
                 value={passwordForm.newPassword}
                 onChange={(e) => setPasswordForm({ ...passwordForm, newPassword: e.target.value })}
-                className="input pr-10 text-sm"
+                className="input !pr-11 text-sm"
                 placeholder="At least 8 characters"
                 required
               />
               <button
                 type="button"
                 onClick={() => setShowNew(!showNew)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-surface-400 hover:text-surface-600 dark:hover:text-surface-200"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 text-surface-400 hover:text-surface-600 dark:hover:text-surface-200 transition-colors cursor-pointer"
               >
                 {showNew ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
@@ -211,7 +211,7 @@ export default function SettingsPage() {
               value={passwordForm.confirmPassword}
               onChange={(e) => setPasswordForm({ ...passwordForm, confirmPassword: e.target.value })}
               className="input text-sm"
-              placeholder="••••••••"
+              placeholder="Re-enter new password"
               required
             />
           </div>

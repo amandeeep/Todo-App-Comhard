@@ -329,7 +329,7 @@ function AuthLayout({ heading, subheading, children }) {
 function Field({ id, label, icon: Icon, error, trailing, hint, ...inputProps }) {
   return (
     <div>
-      <div className="mb-1.5 flex items-center justify-between">
+      <div className="mb-2 flex items-center justify-between">
         <label htmlFor={id} className="block text-sm font-medium text-surface-700 dark:text-surface-300">
           {label}
         </label>
@@ -338,7 +338,7 @@ function Field({ id, label, icon: Icon, error, trailing, hint, ...inputProps }) 
       <div className="group relative">
         <Icon
           aria-hidden
-          className={`pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transition-colors ${
+          className={`pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 transition-colors z-10 ${
             error ? 'text-danger' : 'text-surface-400 group-focus-within:text-primary-600'
           }`}
         />
@@ -346,7 +346,7 @@ function Field({ id, label, icon: Icon, error, trailing, hint, ...inputProps }) 
           id={id}
           aria-invalid={!!error}
           aria-describedby={error ? `${id}-error` : undefined}
-          className={`input pl-10 ${trailing ? 'pr-10' : ''} ${error ? 'input-error' : ''}`}
+          className={`input !pl-10.5 ${trailing ? '!pr-11' : ''} ${error ? 'input-error' : ''}`}
           {...inputProps}
         />
         {trailing}
@@ -366,7 +366,7 @@ function PasswordToggle({ shown, onToggle }) {
       type="button"
       onClick={onToggle}
       aria-label={shown ? 'Hide password' : 'Show password'}
-      className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-1.5 text-surface-400 transition hover:bg-surface-100 hover:text-surface-600 dark:hover:bg-surface-800"
+      className="absolute right-3 top-1/2 -translate-y-1/2 rounded-md p-1.5 text-surface-400 transition hover:bg-surface-100 hover:text-surface-600 dark:hover:bg-surface-800 cursor-pointer"
     >
       {shown ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
     </button>
@@ -458,13 +458,13 @@ export function LoginPage() {
 
         <Field
           id="email" label="Email" icon={Mail} type="email" autoComplete="email" autoFocus required
-          placeholder="" value={form.email} onChange={update('email')}
+          placeholder="name@company.com" value={form.email} onChange={update('email')}
         />
 
         <Field
           id="password" label="Password" icon={Lock} required
           type={showPassword ? 'text' : 'password'} autoComplete="current-password"
-          placeholder="" value={form.password} onChange={update('password')}
+          placeholder="Enter your password" value={form.password} onChange={update('password')}
           hint={
             <Link to="/forgot-password" className="text-xs font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400">
               Forgot password?
@@ -644,7 +644,7 @@ export function RegisterPage() {
 
         <Field
           id="name" label="Full name" icon={User} type="text" autoComplete="name" autoFocus
-          placeholder="" value={form.name} onChange={update('name')} onBlur={blur('name')}
+          placeholder="e.g. Alex Morgan" value={form.name} onChange={update('name')} onBlur={blur('name')}
           error={showError('name')}
         />
 
@@ -672,7 +672,7 @@ export function RegisterPage() {
           error={showError('confirmPassword')}
           trailing={
             passwordsMatch ? (
-              <Check aria-label="Passwords match" className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-emerald-500" />
+              <Check aria-label="Passwords match" className="absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-emerald-500 pointer-events-none" />
             ) : null
           }
         />
